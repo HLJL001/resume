@@ -60,6 +60,52 @@
             width: 50%;
         }
         
+        /* 可点击链接样式 */
+        .contact-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+        .contact-link:hover {
+            color: #16a085;
+            text-decoration: underline;
+        }
+
+        /* 微信二维码悬停浮现核心样式 */
+        .wechat-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .wechat-wrapper:hover {
+            color: #16a085;
+        }
+        .qrcode-box {
+            display: none;
+            position: absolute;
+            top: 25px; /* 在文字下方浮现 */
+            left: 0;
+            width: 160px;
+            height: 160px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 8px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 999;
+        }
+        .wechat-wrapper:hover .qrcode-box {
+            display: block;
+        }
+        .qrcode-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
         /* Section Styling */
         .section-title {
             font-size: 14pt;
@@ -73,13 +119,6 @@
             letter-spacing: 1px;
         }
         
-        /* Summary & Skills */
-        .summary-text {
-            font-size: 10.5pt;
-            color: #444444;
-            text-align: justify;
-            margin-bottom: 10px;
-        }
         .skills-list {
             list-style-type: none;
         }
@@ -185,7 +224,6 @@
 <body>
 
 <div class="resume-container">
-    <!-- 个人信息头部 -->
     <div class="header">
         <table class="header-main">
             <tr>
@@ -196,30 +234,36 @@
         <table class="info-table">
             <tr>
                 <td><strong>出生日期：</strong>1998年1月28日</td>
-                <td><strong>电子邮箱：</strong>huangjiang5213@gmail.com</td>
+                <td><strong>电子邮箱：</strong><a href="mailto:huangjiang5213@gmail.com" class="contact-link">huangjiang5213@gmail.com</a></td>
             </tr>
             <tr>
                 <td><strong>工作年限：</strong>5年运维经验</td>
-                <td><strong>联系电话：</strong>17707491151</td>
+                <td>
+                    <strong>微信号码：</strong>
+                    <div class="wechat-wrapper">
+                        huangjiang5213 (鼠标悬停扫码)
+                        <div class="qrcode-box">
+                            <img src="wechat.png" alt="微信二维码">
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td><strong>现居城市：</strong>深圳</td>
+                <td><strong>现居城市：</strong>重庆市</td>
                 <td></td>
             </tr>
         </table>
     </div>
 
-    <!-- 个人优势/核心技能 -->
     <div class="section-title">核心技能</div>
     <ul class="skills-list">
         <li><strong>机房与系统运维：</strong>熟练掌握 <strong>Linux（Arch Linux、Ubuntu、Debian）</strong> 及 Windows Server 操作系统的全手动安装、高效分区与性能调优；深入理解 <strong>Proxmox VE (PVE)</strong> 虚拟化环境搭建，精通 <strong>Docker</strong> 容器化部署与业务上链。</li>
-        <li><strong>资产与数字化管理：</strong>熟练运用 <strong>NetBox、Snipe-IT</strong> 等开源 DCIM/ITAM 资产管理平台；创新提出以机房物理空间坐标作为核心审计方案，具备大型机房“黑资产”全面清查与秒级故障定位实战经验。</li>
-        <li><strong>自动化运维开发：</strong>熟练使用 <strong>Python</strong> 编写 API 脚本，具备跨系统数据同步和异常调优能力；熟练掌握 <strong>VBA</strong> 宏编程，可实现 Excel 数据与 Word 报告的跨软件高效联动与流程自动化。</li>
+        <li><strong>资产与数字化管理：</strong>熟练运用 <strong>NetBox、Snipe-IT、Chemex</strong> 等开源 DCIM/ITAM 资产管理平台；创新提出以机房物理空间坐标作为核心审计方案，具备大型机房“黑资产”全面清查与秒级故障定位实战经验。</li>
+        <li><strong>自动化运维开发：</strong>熟练使用 <strong>Python</strong> 编写 API 脚本，具备跨系统数据同步和异常调优（403/404错误处理）能力；熟练掌握 <strong>VBA</strong> 宏编程，可实现 Excel 数据与 Word 报告的跨软件高效联动与流程自动化。</li>
         <li><strong>金融级安防弱电：</strong>精通海康威视等主流品牌的智能化视频监控系统、联动门禁、人脸识别及 110 联网报警系统的组网设计、硬件安装、综合布线与故障排查。</li>
         <li><strong>网络数通技能：</strong>扎实的数通理论基础，熟悉 VLAN、OSPF、BGP 等网络协议与排错，具备基础网络架构规划能力。</li>
     </ul>
 
-    <!-- 工作经历 -->
     <div class="section-title">工作经历</div>
     
     <div class="exp-item">
@@ -254,14 +298,13 @@
         </ul>
     </div>
 
-    <!-- 项目经验 -->
     <div class="section-title">项目经验</div>
     
     <div class="exp-item">
         <div class="exp-sub" style="margin-left:0; font-size:11pt; color:#2c3e50;">项目一：数据中心资产数字化审计与自动化同步项目 (主导)</div>
         <ul class="duty-list">
             <li><strong>项目背景：</strong>针对资产管理无序、黑资产无法有效定位、多套资产管理平台手动录入极易出错且形成数据孤岛的问题开展专项优化。</li>
-            <li><strong>核心举措：</strong>搭建基于 NetBox 与 Snipe-IT 的数字化管理架构，<span class="highlight">针对项目机房设备创新改用“机柜 + U位”的物理空间位置作为资产核心唯一主键</span>，替换为原设备标识不明的黑资产标识。</li>
+            <li><strong>核心举措：</strong>搭建基于 NetBox 与 Snipe-IT 的数字化管理架构，<span class="highlight">创新改用“机柜 + U位”的物理空间位置作为资产核心唯一主键</span>，彻底替换了原本冗长繁杂的序列号检索模式。</li>
             <li><strong>技术实现：</strong>运用 <strong>Python API</strong> 独立开发资产自动数据同步工具，攻克了跨系统对接过程中的 403 权限越权与 404 路由异常问题。</li>
             <li><strong>项目成果：</strong>完美清查全部账外“黑资产”，将机房设备故障的物理定位时效缩短至<strong>秒级</strong>，显著提升了整体排错与响应效率。</li>
         </ul>
@@ -275,7 +318,6 @@
         </ul>
     </div>
 
-    <!-- 教育背景 -->
     <div class="section-title">教育背景</div>
     <table class="data-table">
         <thead>
@@ -296,7 +338,6 @@
         </tbody>
     </table>
 
-    <!-- 职业资格与证书 -->
     <div class="section-title">资格证书 & 行业认证</div>
     <table class="data-table">
         <thead>
