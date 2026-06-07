@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>黄江_IT运维工程师_个人简历</title>
+    <title>黄先生_IT运维工程师_个人简历</title>
     <style>
         * {
             box-sizing: border-box;
@@ -33,7 +33,7 @@
         }
         .header-main {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .header-main td {
             vertical-align: bottom;
@@ -49,6 +49,13 @@
             color: #16a085;
             font-weight: bold;
             text-align: right;
+        }
+        .privacy-tip {
+            font-size: 9.5pt;
+            color: #e67e22;
+            font-style: italic;
+            margin-bottom: 12px;
+            font-weight: bold;
         }
         .info-table {
             width: 100%;
@@ -81,7 +88,7 @@
         .qrcode-box {
             display: none;
             position: absolute;
-            top: 25px; /* 在文字下方浮现 */
+            top: 25px;
             left: 0;
             width: 160px;
             height: 160px;
@@ -91,6 +98,7 @@
             border-radius: 6px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             z-index: 999;
+            text-align: center;
         }
         .wechat-wrapper:hover .qrcode-box {
             display: block;
@@ -114,13 +122,6 @@
             letter-spacing: 1px;
         }
         
-        /* Summary & Skills */
-        .summary-text {
-            font-size: 10.5pt;
-            color: #444444;
-            text-align: justify;
-            margin-bottom: 10px;
-        }
         .skills-list {
             list-style-type: none;
         }
@@ -230,23 +231,28 @@
     <div class="header">
         <table class="header-main">
             <tr>
-                <td class="name">黄 江</td>
+                <td class="name">黄先生</td>
                 <td class="intent">求职意向：机房IDC运维 / 桌面运维 / 网络工程师</td>
             </tr>
         </table>
+        
+        
+        
         <table class="info-table">
             <tr>
-                <td><strong>出生日期：</strong>1998年1月28日</td>
-                <td><strong>电子邮箱：</strong><a href="mailto:huangjiang5213@gmail.com" class="contact-link">huangjiang5213@gmail.com</a></td>
+                <td><strong>出生日期：</strong>1998年（28岁）</td>
+                <!-- 邮箱脱敏 -->
+                <td><strong>电子邮箱：</strong><a href="javascript:void(0);" class="contact-link" style="cursor: default;">huangjiang****@gmail.com</a></td>
             </tr>
             <tr>
                 <td><strong>工作年限：</strong>5年运维经验</td>
+                <!-- 电话/微信脱敏及悬停浮现 -->
                 <td>
-                    <strong>微信号码：</strong>
+                    <strong>联系电话/微信：</strong>
                     <div class="wechat-wrapper">
-                        Hoejiang-0128 (鼠标悬停扫码)
+                        <span class="contact-link" style="cursor: pointer;">191-XXXX-6517</span> (悬停扫码)
                         <div class="qrcode-box">
-                            <img src="wechat.png" alt="微信二维码">
+                            <img src="wechat_placeholder.png" alt="请通过招聘平台获取真实二维码">
                         </div>
                     </div>
                 </td>
@@ -274,7 +280,7 @@
     <div class="exp-item">
         <table class="exp-header">
             <tr>
-                <td>重庆易联数码科技股份有限公司</td>
+                <td>某数码科技股份公司（政企信息化供应商）</td>
                 <td>桌面、机房IDC运维工程师</td>
                 <td class="date">2023.10 - 至今</td>
             </tr>
@@ -290,7 +296,7 @@
     <div class="exp-item">
         <table class="exp-header">
             <tr>
-                <td>重庆市戴勋科技有限公司</td>
+                <td>某安防科技有限公司（金融弱电集成商）</td>
                 <td>安防技术工程师</td>
                 <td class="date">2021.09 - 2023.09</td>
             </tr>
@@ -320,8 +326,7 @@
         <div class="exp-sub" style="margin-left:0; font-size:11pt; color:#2c3e50;">项目二：政企故障管理自动化报告系统 (独立开发)</div>
         <ul class="duty-list">
             <li><strong>技术路线：</strong>利用 <strong>VBA 编程</strong> 打通底层数据源与标准行政公文。</li>
-            <li><strong>项目成果：</strong>攻克跨软件对象调用及动态格式适配瓶颈，实现 Excel 报修故障记录向规范化 Word 报告的“一键式”自动化异步导出，精简行政提报及文案处理时间达 80% 
-以上。</li>
+            <li><strong>项目成果：</strong>攻克跨软件对象调用及动态格式适配瓶颈，实现 Excel 报修故障记录向规范化 Word 报告的“一键式”自动化异步导出，精简行政提报及文案处理时间达 80% 以上。</li>
         </ul>
     </div>
 
@@ -338,7 +343,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>重庆电讯职业学院</td>
+                <td>重庆某电子通信类大专院校</td>
                 <td>移动通讯技术</td>
                 <td>三年制大专</td>
                 <td class="right">2018.09 - 2021.06</td>
