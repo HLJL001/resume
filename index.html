@@ -13,7 +13,35 @@
     <link href="./CSS/aos.css" rel="stylesheet">
 
     <title>关于我</title>
-
+    <style>
+        /* 新增联系方式卡片悬浮遮罩展示图片效果 */
+        .contact-hover-wrapper {
+            position: relative;
+        }
+        .contact-qrcode-box {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 4px;
+            z-index: 999;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        /* 当鼠标悬浮在联系方式整块卡片上时激活显示 */
+        .contact-hover-wrapper:hover .contact-qrcode-box {
+            display: block;
+        }
+        .contact-qrcode-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 
@@ -258,7 +286,9 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    
+                                    <!-- 修改联系方式右侧面板为：鼠标悬浮展示指定路径图片 -->
+                                    <div class="col-md-6 contact-hover-wrapper">
                                         <div class="card-body">
                                             <p class="mb-0"><strong>电话</strong></p>
                                             <p class="pb-2 phone"></p>
@@ -268,8 +298,14 @@
                                             <p class="pb-2 address"></p>
                                             <p class="mb-0"><strong>QQ</strong></p>
                                             <p class="qq"></p>
+                                            
+                                            <!-- 悬浮呈现的图片，路径已精准绑定为 ./images/联系方式.png -->
+                                            <div class="contact-qrcode-box">
+                                                <img src="./images/联系方式.png" alt="联系方式">
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
 
                                 <div class="row">
