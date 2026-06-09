@@ -14,32 +14,45 @@
 
     <title>关于我</title>
     <style>
-        /* 新增联系方式卡片悬浮遮罩展示图片效果 */
-        .contact-hover-wrapper {
+        /* 精准局部微信二维码悬浮样式 */
+        .wechat-hover-target {
             position: relative;
+            display: inline-block;
         }
         .contact-qrcode-box {
             display: none;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: #ffffff;
-            padding: 15px;
-            border-radius: 4px;
+            padding: 8px;
+            border-radius: 6px;
+            width: 160px;
+            height: 160px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             z-index: 999;
+            /* 向上弹出，完美避免撑开或遮挡整块面板 */
+            bottom: 30px;
+            left: 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        /* 当鼠标悬浮在联系方式整块卡片上时激活显示 */
-        .contact-hover-wrapper:hover .contact-qrcode-box {
+        /* 仅当鼠标滑过提示文字区域时才触发图片显示 */
+        .wechat-hover-target:hover .contact-qrcode-box {
             display: block;
         }
         .contact-qrcode-box img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+        }
+        .wechat-trigger-text {
+            color: #007bff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .wechat-trigger-text:hover {
+            color: #28a745;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -287,8 +300,7 @@
                                         </div>
                                     </div>
                                     
-                                    <!-- 修改联系方式右侧面板为：鼠标悬浮展示指定路径图片 -->
-                                    <div class="col-md-6 contact-hover-wrapper">
+                                    <div class="col-md-6">
                                         <div class="card-body">
                                             <p class="mb-0"><strong>电话</strong></p>
                                             <p class="pb-2 phone"></p>
@@ -296,12 +308,13 @@
                                             <p class="pb-2 email"></p>
                                             <p class="mb-0"><strong>地址</strong></p>
                                             <p class="pb-2 address"></p>
-                                            <p class="mb-0"><strong>QQ</strong></p>
-                                            <p class="qq"></p>
                                             
-                                            <!-- 悬浮呈现的图片，路径已精准绑定为 ./images/联系方式.png -->
-                                            <div class="contact-qrcode-box">
-                                                <img src="./images/联系方式.png" alt="联系方式">
+                                            <p class="mb-0"><strong>微信</strong></p>
+                                            <div class="wechat-hover-target">
+                                                <p class="pb-2 wechat-trigger-text">鼠标悬停查看微信二维码</p>
+                                                <div class="contact-qrcode-box">
+                                                    <img src="./images/联系方式.png" alt="微信二维码">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -347,3 +360,9 @@
 </script>
 
 </html>
+"""
+
+with open("index_perfect_hover.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("HTML template rewrite finished successfully.")}
