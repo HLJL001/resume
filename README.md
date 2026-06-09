@@ -14,8 +14,6 @@
 
 ## 项目结构
 
-前往[happysnaker/Resume-Web-Page项目仓库](https://github.com/happysnaker/Resume-Web-Page)clone项目，保存在你自己的文件中。
-
 Resume文件下：
 
 - config文件包含了项目的配置文件。
@@ -34,14 +32,14 @@ Resume文件下：
 ```javascript
 var config = {
     /*在这里配置你的基本信息，所有数据以字符串形式给出*/
-    name: "卢世荣",
+    name: "黄先生",
     sex: "男",
     age: "19",
-    phone: "19870887127",
-    email: "happysnaker@foxmail.com",
-    address: "现居浙江省义乌市",
-    qq: "1637318597",
-    log: "Happysnaker",
+    phone: "177***1151",
+    email: "huangjiang****@gmail.com",
+    address: "现居深圳",
+    qq: "114****063",
+    log: "hljl001",
     excpect_work: "Java/Go后端开发",
 
 
@@ -72,7 +70,7 @@ var config = {
 
 
     /*在这里配置关于我的信息，你可以内嵌HTML标签以调整格式*/
-    about: "<p>你好！我叫卢世荣，性别男，南昌软件学院大二在读。我期望的工作岗位是Go/Java后端开发。</p>" +
+    about: "<p>你好！我叫黄先生，性别男，南昌软件学院大二在读。我期望的工作岗位是Go/Java后端开发。</p>" +
         "<p>我有着较多的Java编程经验，计算机基础知识掌握扎实，能够在工作中很好的完成自己的任务。此外，我有着充满激情的工作态度，团队协同作战能力强，同时我也具备独立开发的能力，擅于发现并解决问题。我的执行力强、责任感高、集体荣誉感强、敢于担当，能够接受加班或出差等安排</p>" +
         "<p>十分期待与您的联系!</p>",
 
